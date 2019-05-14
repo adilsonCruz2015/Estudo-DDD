@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ADC.Portal.Solution\ADC.Portal.Solution.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Context\EntityFramework\" />
+    <Folder Include="Context\Daper\" />
+    <Folder Include="Context\NHibernate\" />
+  </ItemGroup>
+
+</Project>

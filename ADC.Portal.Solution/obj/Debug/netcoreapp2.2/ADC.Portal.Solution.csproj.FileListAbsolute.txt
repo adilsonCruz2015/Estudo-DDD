@@ -1,0 +1,8 @@
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.deps.json
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.dll
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.pdb
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.AssemblyInfoInputs.cache
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.AssemblyInfo.cs
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.dll
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.pdb
