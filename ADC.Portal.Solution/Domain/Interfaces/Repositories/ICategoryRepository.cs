@@ -7,6 +7,10 @@ namespace ADC.Portal.Solution.Domain.Interfaces.Repositories
 {
     public interface ICategoryRepository : IRepository<Category, Guid>
     {
-        IEnumerable<Category> Filter(FiltrarCmd command);
+        IEnumerable<Category> Filter(FilterCmd command);
+
+        Category GetByName(string name);
+
+        Category NameSingle(Category category);
     }
 }

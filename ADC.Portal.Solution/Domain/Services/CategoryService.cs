@@ -5,7 +5,6 @@ using ADC.Portal.Solution.Domain.ObjectValue;
 using ADC.Portal.Solution.Domain.Services.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ADC.Portal.Solution.Domain.Services
 {
@@ -21,26 +20,57 @@ namespace ADC.Portal.Solution.Domain.Services
 
         public void Delete(DeleteCmd command)
         {
-            if(command.IsValid())
+            Notification.Clear();
+
+            if (command.IsValid())
             {
-                Category result = GetById(command.Id.FirstOrDefault().Value);
-                if (!object.Equals(result, null))
-                    _categoryRepository.Remove(result);
+                IEnumerable<Category> results = _categoryRepository.Filter(new FilterCmd() { Category = command.Id });
+
+                if (Notification.IsValid())
+                    foreach(Category item in results)
+                        _categoryRepository.Remove(item);
+
+                if (_categoryRepository.Notification.HasNotifications)
+                    Notification.AddNotifications(_categoryRepository.Notification.Notifications);
             }
+            else
+                Notification.AddNotifications(command.Validation);
         }
 
-        public IEnumerable<Category> Filter(FiltrarCmd command)
+        public IEnumerable<Category> Filter(FilterCmd command)
         {
-            throw new NotImplementedException();
+            Notification.Clear();
+            IEnumerable<Category> results = new List<Category>();
+
+            if (command.IsValid())
+            {
+                results = _categoryRepository.Filter(command);
+
+                if (Notification.HasNotifications)
+                    Notification.AddNotifications(_categoryRepository.Notification.Notifications);
+            }
+            else
+                Notification.AddNotifications(command.Validation);
+
+            return results;
         }
 
         public Category Insert(InsertCmd command)
         {
             Category result = null;
+
             if(command.IsValid())
             {
                 command.Apply(ref result);
                 _categoryRepository.Add(result);
+
+                if(_categoryRepository.Notification.HasNotifications)
+                    Notification.AddNotifications(_categoryRepository.Notification.Notifications);
+            }
+            else
+            {
+                command.Undo(ref result);
+                Notification.AddNotifications(command.Validation);
             }
 
             return result;
@@ -51,8 +81,21 @@ namespace ADC.Portal.Solution.Domain.Services
             Category result = null;
             if(command.IsValid())
             {
-                command.Apply(ref result);
-                _categoryRepository.Add(result);
+                result = _categoryRepository.GetById(command.Id);
+
+                if(!_categoryRepository.Notification.HasNotifications)
+                {
+                    command.Apply(ref result);
+                    _categoryRepository.Add(result);
+                }
+
+                if(_categoryRepository.Notification.HasNotifications)
+                    Notification.AddNotifications(_categoryRepository.Notification.Notifications);
+            }
+            else
+            {
+                command.Undo(ref result);
+                Notification.AddNotifications(command.Validation);
             }
 
             return result;

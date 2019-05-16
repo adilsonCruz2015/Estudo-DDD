@@ -1,5 +1,7 @@
 ﻿using ADC.Portal.Solution.Domain.Interfaces.Repositories;
 using ADC.Portal.Solution.Domain.Interfaces.Services.Common;
+using ADC.Portal.Solution.Notification.Validation;
+using ADC.Portal.Solution.Notification.Validation.Interface;
 using System;
 using System.Collections.Generic;
 
@@ -8,12 +10,14 @@ namespace ADC.Portal.Solution.Domain.Services.Common
     public class Service<TEntity, TIdentifier> 
         : IDisposable, IService<TEntity, TIdentifier> where TEntity : class
     {
-
         private readonly IRepository<TEntity, TIdentifier> _repository;
+
+        public INotificationContext Notification { get; }
 
         public Service(IRepository<TEntity, TIdentifier> repository)
         {
             _repository = repository;
+            Notification = new NotificationContext();
         }
 
         public void Add(TEntity entity)

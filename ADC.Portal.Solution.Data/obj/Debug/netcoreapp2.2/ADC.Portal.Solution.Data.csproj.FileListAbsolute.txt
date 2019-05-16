@@ -2,7 +2,11 @@ D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Da
 D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.Data.dll
 D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.Data.pdb
 D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.dll
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.Notification.dll
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.Util.dll
 D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.pdb
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.Notification.pdb
+D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\bin\Debug\netcoreapp2.2\ADC.Portal.Solution.Util.pdb
 D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.Data.csprojAssemblyReference.cache
 D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.Data.csproj.CoreCompileInputs.cache
 D:\Desenvolvimento\AspNetCore\ADC.Portal.Solution.BackEnd\ADC.Portal.Solution.Data\obj\Debug\netcoreapp2.2\ADC.Portal.Solution.Data.AssemblyInfoInputs.cache

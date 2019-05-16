@@ -1,45 +1,73 @@
-﻿using ADC.Portal.Solution.Domain.Interfaces.Repositories;
+﻿using ADC.Portal.Solution.Data.Context.Interface;
+using ADC.Portal.Solution.Domain.Interfaces.Repositories;
+using ADC.Portal.Solution.Notification.Validation;
+using ADC.Portal.Solution.Notification.Validation.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ADC.Portal.Solution.Data.Repositories.Common
 {
-    public class RepositoryNHibernate<TEntity, TIdentifier> : IDisposable, 
-        IRepository<TEntity, TIdentifier> where TEntity : class
+    public class RepositoryNHibernate<TEntity, TIdentifier> : RepositoryBase, IDisposable, 
+        IRepository<TEntity, TIdentifier> where TEntity : class, IValidation
     {
-        public void Add(TEntity entity)
+
+        public RepositoryNHibernate(IConnection connection)
+            : base(connection) { }       
+
+        public virtual void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            Notification.Clear();
+            Connection.Session.Save(entity);
         }
 
-        public void Commit()
+        public virtual void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
         }
 
-        public void Dispose()
+        public virtual IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            Notification.Clear();
+            IEnumerable<TEntity> results = Connection.Session.QueryOver<TEntity>().List();
+
+            if(!Equals(results, null) && results.Count().Equals(0))
+                Notification.AddNotification("Registro não encontrado", TypeOfMessage.Error);
+
+            return results;
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual TEntity GetById(TIdentifier id)
         {
-            throw new NotImplementedException();
+            Notification.Clear();
+            TEntity result = Connection.Session.Get<TEntity>(id);
+
+            if (Equals(result, null))
+                Notification.AddNotification("Registro não encontrado", nameof(id), (object)id, TypeOfMessage.Error);
+
+            return result;
         }
 
-        public TEntity GetById(TIdentifier id)
+        public virtual void Remove(TEntity entity)
         {
-            throw new NotImplementedException();
+            Notification.Clear();
+            Connection.Session.Delete(entity);
         }
 
-        public void Remove(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            Notification.Clear();
+
+            if(Validate(entity))
+                Connection.Session.Update(entity);
         }
 
-        public void Update(TEntity entity)
+        protected virtual void Dispose(bool disposing)
         {
-            throw new NotImplementedException();
+            if (!disposing) return;
+            if (Equals(Connection, null)) return;
+            Connection.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }

@@ -11,10 +11,10 @@ namespace ADC.Portal.Solution.Domain.Command.Common
     {
         public GuidCmd()
         {
-            Id = new List<Guid?>();
+            Id = new List<Guid>();
         }
 
-        public GuidCmd(Guid? id)
+        public GuidCmd(Guid id)
             :this()
         {
             Id.Add(id);
@@ -23,18 +23,10 @@ namespace ADC.Portal.Solution.Domain.Command.Common
         public GuidCmd(IEnumerable<Guid> ids)
             :this()
         {
-            Id = object.Equals(ids, null)
-                ? null : ids.Select(x => (Guid?)x).ToList<Guid?>();
+            Id = ids.ToList();
         }
 
-        public GuidCmd(IEnumerable<Guid?> ids)
-            :this()
-        {
-            Id = object.Equals(ids, null)
-                ? null : ids.ToList();
-        }
-
-        public IList<Guid?> Id { get; set; }
+        public IList<Guid> Id { get; set; }
 
         public ValidationResult Validation { get; protected set; }
 

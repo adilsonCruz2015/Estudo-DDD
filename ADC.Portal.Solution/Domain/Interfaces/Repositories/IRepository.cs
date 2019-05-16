@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ADC.Portal.Solution.Notification.Validation.Interface;
+using System.Collections.Generic;
 
 namespace ADC.Portal.Solution.Domain.Interfaces.Repositories
 {
@@ -14,8 +15,8 @@ namespace ADC.Portal.Solution.Domain.Interfaces.Repositories
 
         void Remove(TEntity entity);
 
-        void Dispose();
+        void Dispose();        
 
-        void Commit();
+        INotificationContext Notification { get; }
     }
 }

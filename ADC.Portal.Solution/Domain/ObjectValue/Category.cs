@@ -1,10 +1,11 @@
 ﻿using ADC.Portal.Solution.Domain.Entity.Common;
 using ADC.Portal.Solution.Domain.Validation.CategoryValidation;
+using ADC.Portal.Solution.Notification.Validation.Interface;
 using System;
 
 namespace ADC.Portal.Solution.Domain.ObjectValue
 {
-    public class Category : EntityBase
+    public class Category : EntityBase, IValidation
     {
         protected Category()
         {
@@ -17,8 +18,7 @@ namespace ADC.Portal.Solution.Domain.ObjectValue
         public Category(string name)
             :this()
         {
-            Name = name;
-            Validate(this, new CategoryValidator());
+            Name = name;            
         }
 
         public virtual string Name { get; set; }        
@@ -32,6 +32,10 @@ namespace ADC.Portal.Solution.Domain.ObjectValue
             return Name;
         }
 
+        public bool IsValid()
+        {
+            return Validate(this, new CategoryValidator());
+        }
 
         #region Constant
 
@@ -40,6 +44,8 @@ namespace ADC.Portal.Solution.Domain.ObjectValue
 
         public const int DESCRIPTION_MAXLENGHT = 500;
         public const int DESCRIPTION_MINLENGHT = 3;
+
+        public const int DATA_MAXLENGHT = 23;
 
         #endregion
 
@@ -54,7 +60,7 @@ namespace ADC.Portal.Solution.Domain.ObjectValue
         {
             Category equal = obj as Category;
             return !Equals(equal, null) && this.GetHashCode() == equal.GetHashCode();
-        }
+        }        
 
         public static bool operator ==(Category a, Category b)
         {

@@ -1,4 +1,5 @@
 ﻿using ADC.Portal.Solution.Domain.Interfaces.Repositories;
+using ADC.Portal.Solution.Notification.Validation.Interface;
 using System;
 using System.Collections.Generic;
 
@@ -7,6 +8,8 @@ namespace ADC.Portal.Solution.Data.Repositories.Common
     public class RepositoryEntityFramework<TEntity, TIdentifier> : IDisposable, 
         IRepository<TEntity, TIdentifier> where TEntity : class
     {
+        public INotificationContext Notification => throw new NotImplementedException();
+
         public void Add(TEntity entity)
         {
             throw new NotImplementedException();

@@ -7,6 +7,6 @@ namespace ADC.Portal.Solution.Domain.Interfaces
     {
         ValidationResult Validation { get; }
 
-        bool Validate<TModel>(TModel model, AbstractValidator<TModel> validator);
+        bool Validate<TModel>(TModel model, AbstractValidator<TModel> validator);       
     }
 }

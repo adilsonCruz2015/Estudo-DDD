@@ -1,5 +1,4 @@
-﻿
-
+﻿using ADC.Portal.Solution.Domain.Command.Common.HelpCmd;
 using FluentValidation;
 
 namespace ADC.Portal.Solution.Domain.Command.Common.Validation
@@ -9,8 +8,10 @@ namespace ADC.Portal.Solution.Domain.Command.Common.Validation
         public GuidValidationCmd()
         {
             RuleFor(c => c.Id)
-                .NotEmpty()
-                .WithMessage("{PropertyName} não pode ser vazia");    
+                .NotNull()
+                .WithMessage("{PropertyName} não pode ser nulo");
+
+            RuleForEach(c => c.Id).SetValidator(new GuidHelpValidationCmd());
         }
     }
 }

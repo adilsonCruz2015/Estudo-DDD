@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v2.2": {
       "ADC.Portal.Solution/1.0.0": {
         "dependencies": {
+          "ADC.Portal.Solution.Notification": "1.0.0",
+          "ADC.Portal.Solution.Util": "1.0.0",
           "FluentValidation": "8.4.0"
         },
         "runtime": {
@@ -25,7 +27,20 @@
           }
         }
       },
-      "System.ComponentModel.Annotations/4.4.1": {}
+      "System.ComponentModel.Annotations/4.4.1": {},
+      "ADC.Portal.Solution.Notification/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "8.4.0"
+        },
+        "runtime": {
+          "ADC.Portal.Solution.Notification.dll": {}
+        }
+      },
+      "ADC.Portal.Solution.Util/1.0.0": {
+        "runtime": {
+          "ADC.Portal.Solution.Util.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -47,6 +62,16 @@
       "sha512": "sha512-ToiYqSCioqhtspq2O/jYKtyTC/T0uwWHBTYlzCi6PRbSSHArN1IaRWeHffDamvms5sye5FDUWCfNZgubQpNRsA==",
       "path": "system.componentmodel.annotations/4.4.1",
       "hashPath": "system.componentmodel.annotations.4.4.1.nupkg.sha512"
+    },
+    "ADC.Portal.Solution.Notification/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ADC.Portal.Solution.Util/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

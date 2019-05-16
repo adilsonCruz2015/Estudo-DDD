@@ -228,6 +228,29 @@
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
         }
+      },
+      "ADC.Portal.Solution.Notification/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "FluentValidation": "8.4.0"
+        },
+        "compile": {
+          "bin/placeholder/ADC.Portal.Solution.Notification.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ADC.Portal.Solution.Notification.dll": {}
+        }
+      },
+      "ADC.Portal.Solution.Util/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/ADC.Portal.Solution.Util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ADC.Portal.Solution.Util.dll": {}
+        }
       }
     }
   },
@@ -805,10 +828,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ADC.Portal.Solution.Notification/1.0.0": {
+      "type": "project",
+      "path": "../ADC.Portal.Solution.Notification/ADC.Portal.Solution.Notification.csproj",
+      "msbuildProject": "../ADC.Portal.Solution.Notification/ADC.Portal.Solution.Notification.csproj"
+    },
+    "ADC.Portal.Solution.Util/1.0.0": {
+      "type": "project",
+      "path": "../ADC.Portal.Solution.Util/ADC.Portal.Solution.Util.csproj",
+      "msbuildProject": "../ADC.Portal.Solution.Util/ADC.Portal.Solution.Util.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "ADC.Portal.Solution.Notification >= 1.0.0",
+      "ADC.Portal.Solution.Util >= 1.0.0",
       "FluentValidation >= 8.4.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
@@ -842,7 +877,14 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Desenvolvimento\\AspNetCore\\ADC.Portal.Solution.BackEnd\\ADC.Portal.Solution.Notification\\ADC.Portal.Solution.Notification.csproj": {
+              "projectPath": "D:\\Desenvolvimento\\AspNetCore\\ADC.Portal.Solution.BackEnd\\ADC.Portal.Solution.Notification\\ADC.Portal.Solution.Notification.csproj"
+            },
+            "D:\\Desenvolvimento\\AspNetCore\\ADC.Portal.Solution.BackEnd\\ADC.Portal.Solution.Util\\ADC.Portal.Solution.Util.csproj": {
+              "projectPath": "D:\\Desenvolvimento\\AspNetCore\\ADC.Portal.Solution.BackEnd\\ADC.Portal.Solution.Util\\ADC.Portal.Solution.Util.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

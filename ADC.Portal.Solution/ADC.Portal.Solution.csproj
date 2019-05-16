@@ -5,7 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Domain\Command\CategoryCmd\Validation\HelpCmd\**" />
+    <EmbeddedResource Remove="Domain\Command\CategoryCmd\Validation\HelpCmd\**" />
+    <None Remove="Domain\Command\CategoryCmd\Validation\HelpCmd\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ADC.Portal.Solution.Notification\ADC.Portal.Solution.Notification.csproj" />
+    <ProjectReference Include="..\ADC.Portal.Solution.Util\ADC.Portal.Solution.Util.csproj" />
   </ItemGroup>
 
 </Project>

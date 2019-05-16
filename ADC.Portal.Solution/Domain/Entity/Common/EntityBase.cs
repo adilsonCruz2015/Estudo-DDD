@@ -17,12 +17,12 @@ namespace ADC.Portal.Solution.Domain.Entity.Common
 
         public virtual bool Invalid => !Valid;
 
-        public virtual ValidationResult Validation  { get; private set; }
+        public virtual ValidationResult Validation  { get; private set; }        
 
         public virtual bool Validate<TModel>(TModel model, AbstractValidator<TModel> validator)
         {
             Validation = validator.Validate(model);
             return Valid = Validation.IsValid;
-        }
+        }        
     }
 }

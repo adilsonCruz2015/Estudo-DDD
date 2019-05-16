@@ -8,13 +8,12 @@ namespace ADC.Portal.Solution.Domain.Interfaces.Services
 {
     public interface ICategoryService : IService<Category, Guid>
     {
-        IEnumerable<Category> Filter(FiltrarCmd command);
+        IEnumerable<Category> Filter(FilterCmd command);
 
         Category Insert(InsertCmd command);
 
         Category Update(UpdateCmd command);
 
         void Delete(DeleteCmd command);
-
     }
 }
