@@ -16,7 +16,6 @@ namespace ADC.Portal.Solution.Domain.Command.CategoryCmd.Validation
                 .WithMessage("{PropertyName} não pode ser nulo");
 
             RuleForEach(x => x.Category).SetValidator(new GuidHelpValidationCmd());
-
             RuleForEach(x => x.Status).SetValidator(new StatusHelpValidationCmd());
         }
     }

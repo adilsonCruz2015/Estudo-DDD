@@ -60,5 +60,27 @@ namespace ADC.Portal.Solution.Test.Domain.ObjectValue
 
             Assert.IsTrue(category.IsValid());
         }
+
+        [TestMethod]
+        public void Category_Description_null_Valid()
+        {
+            Category category = new Category("Eletrodomésticos")
+            {
+                Description = null
+            };
+
+            Assert.IsTrue(category.IsValid());
+        }
+
+        [TestMethod]
+        public void Category_Description_empty_Valid()
+        {
+            Category category = new Category("Eletrodomésticos")
+            {
+                Description = string.Empty
+            };
+
+            Assert.IsTrue(category.IsValid());
+        }
     }
 }

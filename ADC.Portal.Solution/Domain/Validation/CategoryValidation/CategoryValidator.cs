@@ -22,12 +22,13 @@ namespace ADC.Portal.Solution.Domain.Validation.CategoryValidation
                 if(!string.IsNullOrEmpty(value))
                 {
                     if (value.Length < Category.DESCRIPTION_MINLENGHT)
-                        context.AddFailure("{PropertyName} deve conter no mínimo 3 caracteres");
-                    
+                        context.AddFailure(string.Format("{PropertyName} deve conter no mínimo {0} caracteres", Category.DESCRIPTION_MINLENGHT));
 
-                    if(value.Length > Category.DESCRIPTION_MAXLENGHT)
-                        context.AddFailure("{PropertyName} deve conter no máximo 500 caracteres");
+
+                    if (value.Length > Category.DESCRIPTION_MAXLENGHT)
+                        context.AddFailure(string.Format("{PropertyName} deve conter no mínimo {0} caracteres", Category.DESCRIPTION_MINLENGHT));
                 }
+                
             });
 
             RuleFor(c => c.Status).IsInEnum();

@@ -1,9 +1,9 @@
 ﻿using ADC.Portal.Solution.Domain.Command.CategoryCmd.Validation;
 using ADC.Portal.Solution.Domain.Interfaces.Validation;
 using ADC.Portal.Solution.Domain.ObjectValue;
-using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace ADC.Portal.Solution.Domain.Command.CategoryCmd
@@ -18,6 +18,7 @@ namespace ADC.Portal.Solution.Domain.Command.CategoryCmd
 
         #region Category --------------------------------------
 
+        [Display(Name = "Categoria")]
         public IList<Guid> Category { get; set; }
 
         public FilterCmd AddCategory(Guid valor)
@@ -100,7 +101,7 @@ namespace ADC.Portal.Solution.Domain.Command.CategoryCmd
             return this;
         }
 
-        public ValidationResult Validation { get; protected set; }
+        public FluentValidation.Results.ValidationResult Validation { get; protected set; }
 
         public bool IsValid()
         {

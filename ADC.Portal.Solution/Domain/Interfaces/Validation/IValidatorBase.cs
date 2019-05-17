@@ -1,6 +1,4 @@
-﻿
-
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 
 namespace ADC.Portal.Solution.Domain.Interfaces.Validation
 {
