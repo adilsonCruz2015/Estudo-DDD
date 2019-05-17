@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace ADC.Portal.Solution.Domain.Interfaces.Services.Common
 {
-    public interface IService<TEntity, TIdentifier> where TEntity : class
+    public interface IService<TEntity, TIdentifier> : IValidation 
+        where TEntity : class, IValidation
     {
         void Add(TEntity entity);
 

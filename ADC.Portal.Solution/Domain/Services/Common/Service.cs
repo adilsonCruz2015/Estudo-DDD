@@ -8,26 +8,27 @@ using System.Collections.Generic;
 namespace ADC.Portal.Solution.Domain.Services.Common
 {
     public class Service<TEntity, TIdentifier> 
-        : IDisposable, IService<TEntity, TIdentifier> where TEntity : class
+        : ServiceBase, IDisposable, IService<TEntity, TIdentifier> where TEntity : class, IValidation
     {
         private readonly IRepository<TEntity, TIdentifier> _repository;
-
-        public INotificationContext Notification { get; }
 
         public Service(IRepository<TEntity, TIdentifier> repository)
         {
             _repository = repository;
-            Notification = new NotificationContext();
         }
 
         public void Add(TEntity entity)
         {
+            Notification.Clear();
             _repository.Add(entity);
+            Validate(_repository);
         }
 
         public void Remove(TEntity entity)
         {
+            Notification.Clear();
             _repository.Remove(entity);
+            Validate(_repository);
         }
 
         public void Dispose()
@@ -37,17 +38,27 @@ namespace ADC.Portal.Solution.Domain.Services.Common
 
         public IEnumerable<TEntity> GetAll()
         {
-            return _repository.GetAll();
+            Notification.Clear();
+            IEnumerable<TEntity> results = _repository.GetAll();
+            Validate(_repository);
+
+            return results;
         }
 
         public TEntity GetById(TIdentifier id)
         {
-            return _repository.GetById(id);
+            Notification.Clear();
+            TEntity result = _repository.GetById(id);
+            Validate(_repository);
+
+            return result;
         }        
 
         public void Update(TEntity entity)
         {
+            Notification.Clear();
             _repository.Update(entity);
+            Validate(_repository);
         }
     }
 }

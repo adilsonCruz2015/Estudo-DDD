@@ -1,9 +1,10 @@
 ﻿using ADC.Portal.Solution.Notification.Validation.Interface;
 using System.Collections.Generic;
 
-namespace ADC.Portal.Solution.Application.Interface.Common
+namespace ADC.Portal.Solution.Domain.Interfaces.Application.Common
 {
-    public interface IApp<TEntity, TIdentifier> where TEntity : class
+    public interface IApplication<TEntity, TIdentifier> : IValidation 
+        where TEntity : class, IValidation
     {
         void Add(TEntity entity);
 

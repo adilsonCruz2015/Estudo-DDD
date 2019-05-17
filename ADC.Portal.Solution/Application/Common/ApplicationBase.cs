@@ -1,24 +1,18 @@
-﻿using ADC.Portal.Solution.Data.Context.Interface;
+﻿
+
 using ADC.Portal.Solution.Notification.Validation;
 using ADC.Portal.Solution.Notification.Validation.Interface;
 using FluentValidation.Results;
 
-namespace ADC.Portal.Solution.Data.Repositories.Common
+namespace ADC.Portal.Solution.Application.Common
 {
-    public class RepositoryBase : IValidation
+    public class ApplicationBase : IValidation
     {
-        public RepositoryBase(IConnection connection)
-        {
-            Connection = connection;
-        }
-
-        public bool IsValid() => Notification.IsValid();
+        public ValidationResult Validation { get; private set; }
 
         public INotificationContext Notification { get; protected set; } = new NotificationContext();
 
-        public IConnection Connection { get; }
-
-        public ValidationResult Validation { get; private set; }
+        public bool IsValid() => Notification.IsValid();
 
         protected bool Validate(IValidation validate)
         {
@@ -28,5 +22,6 @@ namespace ADC.Portal.Solution.Data.Repositories.Common
 
             return result;
         }
+        
     }
 }

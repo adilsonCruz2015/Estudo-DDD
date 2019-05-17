@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace ADC.Portal.Solution.Domain.Interfaces.Repositories
 {
-    public interface IRepository<TEntity, TIdentifier> where TEntity : class
+    public interface IRepository<TEntity, TIdentifier> : IValidation
+        where TEntity : class, IValidation
     {
         void Add(TEntity entity);
 
