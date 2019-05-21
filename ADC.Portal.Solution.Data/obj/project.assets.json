@@ -672,7 +672,8 @@
         "dependencies": {
           "ADC.Portal.Solution.Notification": "1.0.0",
           "ADC.Portal.Solution.Util": "1.0.0",
-          "FluentValidation": "8.4.0"
+          "FluentValidation": "8.4.0",
+          "NHibernate": "5.2.5"
         },
         "compile": {
           "bin/placeholder/ADC.Portal.Solution.dll": {}

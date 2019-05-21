@@ -1,5 +1,4 @@
-﻿using ADC.Portal.Solution.Data.Context.Interface;
-using ADC.Portal.Solution.Domain.Interfaces.Repositories;
+﻿using ADC.Portal.Solution.Domain.Interfaces.Repositories;
 using ADC.Portal.Solution.Notification.Validation;
 using ADC.Portal.Solution.Notification.Validation.Interface;
 using System;

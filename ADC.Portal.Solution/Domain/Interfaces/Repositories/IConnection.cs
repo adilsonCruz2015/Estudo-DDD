@@ -1,7 +1,7 @@
 ﻿using NHibernate;
 using System;
 
-namespace ADC.Portal.Solution.Data.Context.Interface
+namespace ADC.Portal.Solution.Domain.Interfaces.Repositories
 {
     public interface IConnection : IDisposable
     {

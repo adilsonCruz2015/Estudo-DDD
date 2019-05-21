@@ -1,10 +1,8 @@
-﻿using ADC.Portal.Solution.Data.Context.Interface;
-using ADC.Portal.Solution.Data.Repositories.Common;
+﻿using ADC.Portal.Solution.Data.Repositories.Common;
 using ADC.Portal.Solution.Domain.Command.CategoryCmd;
 using ADC.Portal.Solution.Domain.Interfaces.Repositories;
 using ADC.Portal.Solution.Domain.ObjectValue;
 using ADC.Portal.Solution.Notification.Validation;
-using ADC.Portal.Solution.Notification.Validation.Interface;
 using NHibernate.Transform;
 using System;
 using System.Collections.Generic;

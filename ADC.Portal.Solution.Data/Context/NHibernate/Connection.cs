@@ -1,5 +1,5 @@
-﻿using ADC.Portal.Solution.Data.Context.Interface;
-using ADC.Portal.Solution.Data.Context.NHibernate.Mappings;
+﻿using ADC.Portal.Solution.Data.Context.NHibernate.Mappings;
+using ADC.Portal.Solution.Domain.Interfaces.Repositories;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;

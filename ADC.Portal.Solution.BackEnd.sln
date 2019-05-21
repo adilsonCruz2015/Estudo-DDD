@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADC.Portal.Solution.Util", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADC.Portal.Solution.Test", "ADC.Portal.Solution.Test\ADC.Portal.Solution.Test.csproj", "{B0E10039-931A-47DC-99FA-98E0E1968364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADC.Portal.Solution.IdC.SimpleInjector", "ADC.Portal.Solution.IdC.SimpleInjector\ADC.Portal.Solution.IdC.SimpleInjector.csproj", "{80405E1C-DC68-4681-864E-3BAE198850BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADC.Portal.Solution.IdC.SimpleInjector", "ADC.Portal.Solution.IdC.SimpleInjector\ADC.Portal.Solution.IdC.SimpleInjector.csproj", "{80405E1C-DC68-4681-864E-3BAE198850BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADC.Portal.Solution.Api.Core", "ADC.Portal.Solution.Api.Core\ADC.Portal.Solution.Api.Core.csproj", "{B8CB976D-98D5-40DF-8C4D-66C4CDCEF42C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{80405E1C-DC68-4681-864E-3BAE198850BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80405E1C-DC68-4681-864E-3BAE198850BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80405E1C-DC68-4681-864E-3BAE198850BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8CB976D-98D5-40DF-8C4D-66C4CDCEF42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8CB976D-98D5-40DF-8C4D-66C4CDCEF42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8CB976D-98D5-40DF-8C4D-66C4CDCEF42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8CB976D-98D5-40DF-8C4D-66C4CDCEF42C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
